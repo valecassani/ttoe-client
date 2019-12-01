@@ -1,23 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import {  Switch, Route } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
+
+import Game from './views/Game';
+import Config from './views/Config';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          TEST
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Router>
+        <Switch>
+          <Route path="/:gameId" render={props => <Game {...props} />} >
+          </Route>
+          <Route path="/">
+            <Config />
+          </Route>
+        </Switch>
+        </Router>
       </header>
     </div>
   );
