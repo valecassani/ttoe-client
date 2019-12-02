@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { ToggleButtonGroup, ToggleButton } from "@material-ui/lab";
-import { Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { createGame as createGameApi } from "../../apis";
+import React, { useState } from 'react';
+import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { createGame as createGameApi } from '../../apis';
 
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router';
 
 const useStyles = makeStyles({
     container: {
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column'
     },
     innerGroup: {
-        margin: "20px",
+        margin: '20px'
     },
     outlined: {
-        color: "white",
-        borderColor: "white",
-    },
+        color: 'white',
+        borderColor: 'white'
+    }
 });
 
 const createGame = ({ players, dimension, history }) => {
@@ -64,9 +64,7 @@ const Config = ({ history }) => {
                 <ToggleButtonGroup
                     value={dimension}
                     exclusive
-                    onChange={e =>
-                        setDimension(parseInt(e.currentTarget.value))
-                    }
+                    onChange={e => setDimension(parseInt(e.currentTarget.value))}
                     aria-label="Size"
                 >
                     <ToggleButton value={3} aria-label="3 x 3">
