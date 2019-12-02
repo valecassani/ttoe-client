@@ -9,15 +9,16 @@ import Config from './views/Config';
 function App() {
     return (
         <div className="App">
-            <header className="App-header"></header>
-            <Router>
-                <Switch>
-                    <Route path="/:gameId" render={props => <Game {...props} />}></Route>
-                    <Route path="/">
-                        <Config />
-                    </Route>
-                </Switch>
-            </Router>
+            <div className="App-body">
+                <Router>
+                    <Switch>
+                        <Route path="/:gameId" render={props => <Game {...props} />}></Route>
+                        <Route path="/">
+                            <Config />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>
         </div>
     );
 }
